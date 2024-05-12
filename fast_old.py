@@ -1,7 +1,8 @@
 import pickle, torch, random
 from pathlib import Path
 from deep_Q_network_old import *
-from utils import ACTIONS
+from utils_old import ACTIONS
+import gym
 
 path = Path().absolute()
 
@@ -43,8 +44,8 @@ def record(filename):
     import cv2
 
     # Set environment
-    ale = ALEInterface()
-    ale.loadROM(Pacman)
+    ##ale = ALEInterface()
+    ##ale.loadROM(Pacman)
     env = gym.make("MsPacman-v0")
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

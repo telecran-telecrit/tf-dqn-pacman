@@ -2,7 +2,7 @@ from collections import namedtuple, deque
 import random, torch, numpy as np
 from functools import reduce
 
-from .parameters import device
+from .parameters_old import device
 
 Experience = namedtuple("Experience", ("state", "action", "reward", "next_state", "done"))
 

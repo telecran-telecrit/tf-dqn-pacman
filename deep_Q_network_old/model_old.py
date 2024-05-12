@@ -3,7 +3,7 @@ from torch.nn import functional as F
 from torchvision import transforms as T
 import torch
 
-from .parameters import BATCH_SIZE, DISCOUNT_RATE, device
+from .parameters_old import BATCH_SIZE, DISCOUNT_RATE, device
 
 
 class DQN(nn.Module):

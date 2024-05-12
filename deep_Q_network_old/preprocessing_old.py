@@ -1,4 +1,4 @@
-from .parameters import PACMAN_COLOR_GRAY, WALL_COLOR_GRAY, BACKGROUND_GRAY
+from .parameters_old import PACMAN_COLOR_GRAY, WALL_COLOR_GRAY, BACKGROUND_GRAY
 from ale_py import ALEInterface
 from typing import List
 import numpy as np
