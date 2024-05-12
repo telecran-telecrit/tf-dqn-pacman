@@ -142,7 +142,8 @@ class DataHandler:
             self.buffer.image = obs.copy()
             reward = transform_reward(reward_)
 
-            if info["lives"] < lives:
+            #if info is not None and info["lives"] < lives:
+            if info is not None and info["ale.lives"] < lives:
                 lives -= 1
                 jump_dead_step = True
                 got_reward = False
@@ -179,7 +180,8 @@ class DataHandler:
                 self.target.load_state_dict(self.policy.state_dict())
 
             if done:
-                self.buffer.successes += info["lives"] > 0
+                #self.buffer.successes += info["lives"] > 0
+                self.buffer.successes += info["ale.lives"] > 0
                 break
             if jump_dead_step:
                 for i_dead in range(params.DEAD_STEPS):
