@@ -1,6 +1,6 @@
 import pickle, torch, random
 from pathlib import Path
-from deep_Q_network import *
+from deep_Q_network_old import *
 from utils import ACTIONS
 
 path = Path().absolute()
