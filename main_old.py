@@ -6,12 +6,12 @@ import gym
 from rich.progress import Progress, BarColumn, TextColumn
 from rich.live import Live
 
-from deep_Q_network import parameters as params
-from deep_Q_network.parameters import EPS_MAX, EPS_MIN, EPS_DECAY
-from deep_Q_network import device, init_obs, preprocess_observation
-from deep_Q_network import DQN, ReplayMemory, Buffer, ALEInterface, Pacman
-from utils import start, REWARDS, ACTIONS, REVERSED, transform_reward, save_model, save_plot
-from utils.parser import args
+from deep_Q_network_old import parameters_old as params
+from deep_Q_network_old.parameters_old import EPS_MAX, EPS_MIN, EPS_DECAY
+from deep_Q_network_old import device, init_obs, preprocess_observation
+from deep_Q_network_old import DQN, ReplayMemory, Buffer, ALEInterface #, Pacman
+from utils_old import start, REWARDS, ACTIONS, REVERSED, transform_reward, save_model, save_plot
+from utils_old.parser import args
 
 import random
 
@@ -202,8 +202,8 @@ if __name__ == "__main__":
     # Get paths
     paths = start(args)
     # Set environment
-    ale = ALEInterface()
-    ale.loadROM(Pacman)
+    ##ale = ALEInterface()
+    ##ale.loadROM(Pacman)
     env = gym.make("MsPacman-v0")
 
     # Set Deep Q Networks and memory
