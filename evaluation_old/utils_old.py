@@ -1,8 +1,8 @@
 import pickle, torch, random
-from utils import ACTIONS
-from deep_Q_network import parameters as params
-from deep_Q_network import device, init_obs, preprocess_observation
-from deep_Q_network import DQN, Buffer, ALEInterface, Pacman
+from utils_old import ACTIONS
+from deep_Q_network_old import parameters_old as params
+from deep_Q_network_old import device, init_obs, preprocess_observation
+from deep_Q_network_old import DQN, Buffer, ALEInterface #, Pacman
 import gym
 
 def moving_average(values, n):

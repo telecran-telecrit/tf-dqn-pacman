@@ -1,5 +1,5 @@
-from evaluation import *
-from evaluation.parser import args
+from evaluation_old import *
+from evaluation_old.parser_old import args
 from pathlib import Path
 import re
 

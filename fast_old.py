@@ -55,7 +55,7 @@ def record(filename):
     agent.load_state_dict(torch.load(str(filename), map_location=device))
     agent.eval()
 
-    dmaker = DecisionMaker(0, agent)
+    #dmaker = DecisionMaker(0, agent)
     obs = env.reset()
 
     frameSize = (160, 210)
@@ -89,12 +89,12 @@ def record(filename):
         obs, reward, done, info = env.step(action)
         out.write(cv2.cvtColor(obs, cv2.COLOR_RGB2BGR))
         old_action = action_
-        if done:
+        if (done and info["ale.lives"] == 0):
             break
 
     out.release()
     print('"output_video.avi" saved in {}'.format(path))
 
 
-# only_rewards("episode-700.pkl")
-record(path / "policy-model-700.pt")
+# only_rewards("episode-560.pkl")
+record(path / "policy-model-560.pt")
